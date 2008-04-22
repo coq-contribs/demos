@@ -7,3 +7,4 @@ Description: Example of sorting algorithms defined using the Cases
 intuitionistic propositional calculus. Demo of the AutoRewrite tactic. Demo of
 the Prolog tactic applied to the compilation of miniML programs.
 Keywords: sorting, Cases, Tauto, AutoRewrite, Prolog
+Category: Miscellaneous/Coq Use Examples

@@ -42,14 +42,14 @@ Hint Resolve AckO AcknO.
 
 Goal forall n m : nat, {p : nat | Ack n m p}.
 simple induction n.
-intro m; exists (S m); auto with v62.
+intro m; exists (S m); auto.
 simple induction m.
 elim (H 1); intros.
-exists x; auto with v62.
+exists x; auto.
 intros m' H'; elim H'; intros.
 elim (H x); intros.
 exists x0.
-apply AckSS with x; auto with v62.
+apply AckSS with x; auto.
 Save Ackermann.
 
 (* Functional definition of Ackermann :
@@ -75,15 +75,15 @@ Definition ack (n : nat) :=
 (* S m *) 
 
 Goal forall n m p : nat, Ack n m p -> p = ack n m :>nat.
-simple induction 1; simpl in |- *; trivial with v62.
-intros n1 m1 p1 q1 ASn Eq An Ep; elim Eq; elim Ep; trivial with v62.
+simple induction 1; simpl in |- *; trivial.
+intros n1 m1 p1 q1 ASn Eq An Ep; elim Eq; elim Ep; trivial.
 Save ack_Ack.
 
 Goal forall n m : nat, Ack n m (ack n m).
 simple induction n.
-simpl in |- *; auto with v62.
+simpl in |- *; auto.
 intros n' H; simple induction m.
-simpl in |- *; auto with v62.
-intros m' H'; apply AckSS with (ack (S n') m'); auto with v62.
+simpl in |- *; auto.
+intros m' H'; apply AckSS with (ack (S n') m'); auto.
 apply (H (ack (S n') m')).
 Save Ack_ack.
